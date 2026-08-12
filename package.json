@@ -4,20 +4,26 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host 0.0.0.0",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@nuxt/eslint": "1.12.1",
-    "@nuxt/image": "2.0.0",
+    "@nuxt/image": "^2.1.0",
     "@nuxt/test-utils": "3.21.0",
-    "@nuxt/ui": "4.3.0",
-    "eslint": "^9.0.0",
-    "nuxt": "^4.2.2",
-    "typescript": "^5.6.3",
-    "vue": "^3.5.26",
+    "@nuxt/ui": "^4.10.0",
+    "eslint": "^9.39.5",
+    "nuxt": "^4.5.2",
+    "typescript": "^5.9.3",
+    "vue": "^3.5.41",
     "vue-router": "^4.6.4"
+  },
+  "allowScripts": {
+    "esbuild@0.27.7": true,
+    "esbuild@0.28.2": true,
+    "vue-demi@0.14.10": true,
+    "unrs-resolver@1.12.2": true
   }
 }

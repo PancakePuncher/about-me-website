@@ -18,5 +18,9 @@ export default defineNuxtConfig({
     server: {
       allowedHosts: [".pancakepuncher.com"]
     }
+  },
+
+  devServer: {
+    host: '0.0.0.0'
   }
 })
