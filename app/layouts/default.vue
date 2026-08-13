@@ -11,7 +11,7 @@ import AppHeader from "~/components/AppHeader.vue";
     <main class="grow">
       <slot />
     </main>
-    <footer>
+    <footer class="mt-12">
       <AppFooter />
     </footer>
   </div>
