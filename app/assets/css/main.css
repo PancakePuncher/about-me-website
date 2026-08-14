@@ -1,2 +1,93 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+
+/* Key Button Styling and Animations */
+.toggle-button input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    touch-action: manipulation;
+}
+
+.toggle-button {
+    user-select: none;
+    display: inline-block;
+    background-color: #720e9e;
+    padding: 1rem;
+    transform: translateY(-1rem);
+    box-shadow: 0 1rem 0 0 black;
+    border-radius: 2%;
+    text-align: center;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+@media (hover: hover) {
+    .toggle-button:hover {
+        background-color: #33006F;
+    }
+}
+
+
+.toggle-button-active {
+    animation: keyPress 0.25s ease-out forwards;
+}
+
+.toggle-button:not(.toggle-button-active) {
+    animation: keyRelease 0.15s ease-out forwards;
+}
+
+
+@keyframes keyPress {
+    0% {
+        transform: translateY(-1rem);
+        box-shadow: 0 1rem 0 0 black;
+        background-color: #720e9e;
+    }
+
+    60% {
+        transform: translateY(0.1rem);
+        box-shadow: 0 0 0 0 black;
+    }
+
+    100% {
+        transform: translateY(-0.4rem);
+        box-shadow: 0 0.4rem 0 0 black;
+        background-color: #33006F;
+    }
+}
+
+@keyframes keyRelease {
+    0% {
+        transform: translateY(0rem);
+        box-shadow: 0 0.01rem 0 0 black;
+    }
+
+    100% {
+        transform: translateY(-1rem);
+        box-shadow: 0 1rem 0 0 black;
+    }
+}
+
+/* Inset Body Styling */
+.outer {
+    background-color: #40006F;
+    margin: 2rem;
+    padding: 0.7rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 0.6rem 0 0 #310055;
+    width: 100%;
+
+}
+
+.inner {
+    background-color: #4B0082;
+    padding: 1.2rem 1.7rem;
+    border-radius: 0.3rem;
+    box-shadow: inset 0 0.3rem 0.3rem #6F339B;
+    text-align: center;
+    color: white;
+}
