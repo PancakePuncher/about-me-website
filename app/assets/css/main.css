@@ -5,6 +5,7 @@
 /* Key Button Styling and Animations */
 .toggle-button input {
     position: absolute;
+    padding: 0;
     opacity: 0;
     width: 0;
     height: 0;
@@ -18,11 +19,9 @@
     background-color: #720e9e;
     padding: 1rem;
     transform: translateY(-1rem);
-    box-shadow: 0 1rem 0 0 black;
-    border-radius: 2%;
+    border-radius: 3%;
     text-align: center;
     cursor: pointer;
-    touch-action: manipulation;
 }
 
 @media (hover: hover) {
@@ -44,18 +43,18 @@
 @keyframes keyPress {
     0% {
         transform: translateY(-1rem);
-        box-shadow: 0 1rem 0 0 black;
+        box-shadow: 0 1rem 0 0 #6F339B;
         background-color: #720e9e;
     }
 
     60% {
         transform: translateY(0.1rem);
-        box-shadow: 0 0 0 0 black;
+        box-shadow: 0 0 0 0 #6F339B;
     }
 
     100% {
         transform: translateY(-0.4rem);
-        box-shadow: 0 0.4rem 0 0 black;
+        box-shadow: 0 0.4rem 0 0 #6F339B;
         background-color: #33006F;
     }
 }
@@ -63,20 +62,20 @@
 @keyframes keyRelease {
     0% {
         transform: translateY(0rem);
-        box-shadow: 0 0.01rem 0 0 black;
+        box-shadow: 0 0.01rem 0 0 #6F339B;
     }
 
     100% {
         transform: translateY(-1rem);
-        box-shadow: 0 1rem 0 0 black;
+        box-shadow: 0 1rem 0 0 #6F339B;
     }
 }
 
 /* Inset Body Styling */
 .outer {
     background-color: #40006F;
-    margin: 2rem;
-    padding: 0.7rem;
+    margin: 4rem;
+    padding: 1rem;
     border-radius: 0.4rem;
     box-shadow: 0 0.6rem 0 0 #310055;
     width: 100%;
@@ -90,4 +89,69 @@
     box-shadow: inset 0 0.3rem 0.3rem #6F339B;
     text-align: center;
     color: white;
+}
+
+/* Stack CSS */
+
+.scene {
+    width: 15rem;
+    height: 15rem;
+    perspective: 1000px;
+}
+
+.stack {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(60deg) rotateZ(30deg);
+}
+
+.slice {
+    --depth: 0px;
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    flex-direction: column;
+    transform: translateZ(var(--depth));
+    transition: transform 0.3s
+}
+
+.slice-active {
+    transform: translateZ(var(--depth)) translateX(4rem);
+}
+
+.slice-text {
+    z-index: -1;
+    margin-top: auto;
+    margin-bottom: 0;
+    font-size: 2rem;
+    user-select: none;
+}
+
+.frontend {
+    --depth: 0px;
+    background-color: #E0AAFF;
+}
+
+.backend {
+    --depth: -45px;
+    background-color: #C77DFF;
+}
+
+.database {
+    --depth: -85px;
+    background-color: #9D4EDD;
+}
+
+.platform {
+    --depth: -125px;
+    background-color: #B497D6;
 }

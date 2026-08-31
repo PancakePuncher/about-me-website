@@ -4,7 +4,7 @@ import AppHeader from "~/components/AppHeader.vue";
 </script>
 
 <template>
-  <div class="flex flex-col min-h-screen p-5">
+  <div class="flex flex-col p-5 pb-2 min-h-screen">
     <header>
       <AppHeader />
     </header>
